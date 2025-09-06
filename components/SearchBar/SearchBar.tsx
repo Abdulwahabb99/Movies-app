@@ -8,6 +8,7 @@ interface searchBarProps {
   value: string;
   placeholder: string;
   placeholderTextColor: string;
+  autoFocus?: boolean;
 }
 
 const SearchBar = ({
@@ -16,6 +17,7 @@ const SearchBar = ({
   value,
   placeholder,
   placeholderTextColor,
+  autoFocus = false,
 }: searchBarProps) => {
   return (
     <View className="flex flex-row items-center rounded-full px-5 py-4 bg-dark-200">
@@ -32,6 +34,7 @@ const SearchBar = ({
         value={value}
         onPress={onPress}
         onChangeText={onChangeText}
+        autoFocus={autoFocus}
       />
     </View>
   );

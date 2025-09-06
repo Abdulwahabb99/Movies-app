@@ -60,6 +60,7 @@ const search = () => {
                 placeholderTextColor={"#AB8BFF"}
                 value={searchText}
                 onChangeText={(text: string) => setSearchText(text)}
+                autoFocus
               />
             </View>
             {moviesLoading && (
