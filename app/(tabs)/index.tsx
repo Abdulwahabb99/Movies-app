@@ -15,14 +15,16 @@ export default function Index() {
     data: movies,
     loading: moviseLoading,
     error: moviseError,
-    refetch,
+    reset: resetMovies,
   } = useFetch(() => fetchMovies({ query: "" }));
 
   const {
     data: popularMovies,
     loading: popularMoviesLoading,
     error: popularMoviesError,
+    reset: resetPopularMovies,
   } = useFetch(() => fetchMovies({ query: "", getPopular: true }));
+
   return (
     <View className="flex-1 bg-primary">
       <Image source={images.bg} className="w-full z-0 absolute" />

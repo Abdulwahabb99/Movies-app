@@ -19,7 +19,6 @@ const PopularMovieCard = ({
   release_date,
   index,
 }: movieCardProps) => {
-  const movieNumber = index + 1;
   const uri =
     poster_path && poster_path?.trim() !== ""
       ? `https://image.tmdb.org/t/p/w500${poster_path?.startsWith("/") ? "" : "/"}${poster_path}`

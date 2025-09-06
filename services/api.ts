@@ -9,7 +9,7 @@ export const TMDB_CONFIG = {
 
 export const fetchMovies = async ({
   query,
-  getPopular,
+  getPopular = false,
 }: {
   query?: string;
   getPopular?: boolean;
@@ -19,9 +19,7 @@ export const fetchMovies = async ({
       ? `${TMDB_CONFIG.BASE_URL}/search/movie?sort_by=popularity.desc&query=${query}`
       : `${TMDB_CONFIG.BASE_URL}/discover/movie?sort_by=popularity.desc`;
 
-    const popularMoviesEndpoint = query
-      ? `${TMDB_CONFIG.BASE_URL}/search/movie?sort_by=popularity.desc&query=${query}`
-      : `${TMDB_CONFIG.BASE_URL}/discover/movie?vote_count.gte=500`;
+    const popularMoviesEndpoint = `${TMDB_CONFIG.BASE_URL}/discover/movie?vote_count.gte=500`;
 
     const response = await fetch(
       getPopular ? popularMoviesEndpoint : endpoint,
