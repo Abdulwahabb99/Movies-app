@@ -4,8 +4,8 @@ module.exports = {
     "./App.{js,jsx,ts,tsx}",
     "./app/**/*.{js,jsx,ts,tsx}",
     "./components/**/*.{js,jsx,ts,tsx}",
-  ],
-  presets: [require("nativewind/preset")],
+    // "./**/*.{js,jsx,ts,tsx}",   // ✨ يغطي أي مجلدات إضافية
+  ],  presets: [require("nativewind/preset")],
   theme: {
     extend: {
       colors: {
